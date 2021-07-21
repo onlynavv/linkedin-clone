@@ -8,6 +8,12 @@
 .post-header {
   display: flex;
   margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-userInfo {
+  display: flex;
 }
 
 .post-info {
@@ -21,14 +27,49 @@
 
 .post-body {
   overflow-wrap: anywhere;
+  margin-top: 25px;
 }
 
 .post-body > h2 {
   font-size: 15px;
 }
 
+.postBody-image {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.postBody-image > img {
+  object-fit: cover;
+  width: 100%;
+  height: 350px;
+}
+
 .post-buttons {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.social-counts {
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px rgb(187, 187, 187);
+}
+
+.social-counts > button {
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: gray;
+}
+
+.social-counts > button > span {
+  margin-left: 5px;
 }

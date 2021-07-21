@@ -1,0 +1,72 @@
+.login-container {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.loginNav-container {
+  margin: auto 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.login-logo {
+  object-fit: contain;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.login-section {
+  display: flex;
+  width: 100%;
+  max-width: 1128px;
+  align-items: center;
+  margin: auto;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero > div > h1 {
+  width: 100%;
+  font-size: 56px;
+  color: #2977c9;
+  font-weight: 300;
+}
+
+.hero > img {
+  width: 650px;
+  height: 510px;
+  z-index: -1;
+}
+
+.signIn-button {
+  border: none;
+  outline: none;
+  background-color: white;
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.signIn-button > img {
+  margin-right: 10px;
+}
+
+.signIn-button:hover {
+  cursor: pointer;
+}

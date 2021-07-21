@@ -13,27 +13,32 @@
 
 .header-left {
   display: flex;
+  align-items: center;
 }
 
 .header-left > img {
   object-fit: contain;
-  height: 40px;
+  height: 36px;
   margin-right: 10px;
 }
 
 .header-search {
-  padding: 10px;
+  padding: 9px;
   display: flex;
   align-items: center;
   background: #eef3f8;
   border-radius: 5px;
-  height: 22px;
+  height: 18px;
+  width: 280px;
+  max-width: 300px;
 }
 
 .header-search > input {
   outline: none;
   border: none;
   background: none;
+  width: 100%;
+  font-size: 14px;
 }
 
 .header-option {
@@ -41,12 +46,16 @@
   flex-direction: column;
   align-items: center;
   margin-right: 30px;
-  color: gray;
+  color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 
 .header-option:hover {
   color: black;
+}
+
+.active {
+  border-bottom: solid 2px black;
 }
 
 .header-right {
@@ -63,3 +72,58 @@
   height: 25px !important;
   width: 25px !important;
 }
+
+.headerOption-dropDownContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerOption-dropDownContainer > .MuiSvgIcon-root {
+  margin-top: -3px;
+}
+
+.signout {
+  position: absolute;
+  top: 65px;
+  right: 100px;
+  background-color: white;
+  height: fit-content;
+  width: 300px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 1px 2px 5px #8e8686;
+}
+
+.signout-option > p {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.signout-userInfo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.userDetails {
+  margin-left: 5px;
+}
+
+.signout-option {
+  border-top: solid 1px lightgray;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 15px;
+}
+
+/* .dropDown:hover .signout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */

@@ -5,10 +5,17 @@
 
 .feed-inputContainer {
   background: white;
-  padding: 10px;
+  padding: 15px;
   padding-bottom: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-inputBox {
+  display: flex;
+  width: 100%;
 }
 
 .feed-input {
@@ -17,6 +24,12 @@
   padding: 10px;
   color: gray;
   display: flex;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.feed-input > form > input:hover {
+  cursor: pointer;
 }
 
 .feed-input > form {
