@@ -6,6 +6,7 @@ import Feed from './Feed'
 import Login from './Login';
 import {auth} from './firebase'
 import {useAuthState} from 'react-firebase-hooks/auth'
+import Widget from './Widget';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <div className='app-body'>
           <Sidebar />
           <Feed />
+          <Widget />
         </div>
         </>
       )}

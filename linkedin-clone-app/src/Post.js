@@ -22,7 +22,7 @@ const Post = ({name,description,message,photoUrl,comments,timestamp}) => {
                     <div className='post-info'>
                         <h4>{user.displayName}</h4>
                         <p>{user.email}</p>
-                        <p>{new Date(timestamp?.toDate()).toDateString()}</p>
+                        <p>{new Date(timestamp?.toDate()).toDateString()} <span>{new Date(timestamp?.toDate()).toLocaleTimeString('en-US')}</span></p>
                     </div>
                 </div>
                 <MoreHorizIcon />

@@ -8,6 +8,8 @@ import { useGlobalContext } from './context';
 import {db} from './firebase'
 import firebase from 'firebase'
 import ReactPlayer from 'react-player'
+import {auth} from './firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const PostModal = () => {
 
@@ -18,6 +20,8 @@ const PostModal = () => {
     const [showVideoPick,setShowVideoPick] = useState(false)
     const [imagePick,setImagePick] = useState('')
     const [videoLink,setVideoLink] = useState('')
+
+    const [user] = useAuthState(auth)
 
     const sendPost = (e) => {
         e.preventDefault();
@@ -101,7 +105,7 @@ const PostModal = () => {
                 <div className='modal-user'>
                     <div className='modal-userInfo'>
                         <Avatar />
-                        <span>Naveen Kumar</span>
+                        <span>{user.displayName}</span>
                     </div>
                 </div>
 
@@ -112,7 +116,7 @@ const PostModal = () => {
 
                 {showPhotoPick && (
                     <div className='photoPick-container'>
-                        <input type='file' accept='image/gif, image/jpeg, image/png' name='image' id='file' onChange={handlePhotoPick} style={{display:'none'}}></input>
+                        <input type='file' accept='image/gif, image/jpeg, image/png' name='file' id='file' onChange={handlePhotoPick} style={{display:'none'}}></input>
                         <p>
                             <label for='file'>Click here to select an image to share</label>
                         </p>
