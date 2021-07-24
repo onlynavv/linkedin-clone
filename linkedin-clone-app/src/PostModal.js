@@ -11,6 +11,7 @@ import ReactPlayer from 'react-player'
 import {auth} from './firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
+
 const PostModal = () => {
 
     const {dispatch} = useGlobalContext()
@@ -59,6 +60,14 @@ const PostModal = () => {
             comments:0,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
+    }else{
+        db.collection('posts').add({
+            name:'Naveen',
+            description:'testing',
+            message: message,
+            comments:0,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
     }
 
         setMessage('')
@@ -69,7 +78,6 @@ const PostModal = () => {
 
     const handleClose = () => {
         dispatch({type:'CLOSE_MODAL'})
-        console.log('clicked')
     }
 
     const handleShowPhoto = () => {

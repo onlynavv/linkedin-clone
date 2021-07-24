@@ -11,6 +11,8 @@ const AppProvider = ({children}) => {
 
     const [state,dispatch] = useReducer(reducer,initialState)
 
+    // console.log(state.editId)
+
     return(
         <AppContext.Provider value={{...state,dispatch}}>
             {children}

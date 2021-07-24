@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Avatar } from '@material-ui/core'
 import './Post.css'
 import InputOption from './InputOption'
@@ -9,10 +9,25 @@ import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import {auth} from './firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import {db} from './firebase'
 
-const Post = ({name,description,message,photoUrl,comments,timestamp}) => {
+const Post = ({name,description,message,photoUrl,comments,timestamp,docId}) => {
 
     const[user] = useAuthState(auth)
+
+    const [moreOption,setMoreOption] = useState(false)
+
+    const handleMoreOption = () => {
+        setMoreOption(!moreOption)
+    }
+
+    const handlePostDelete = (docId) => {
+        db.collection('posts').doc(`${docId}`).delete().then(()=>{
+            console.log('document deleted successfully')
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }
 
     return (
         <div className='post'>
@@ -25,7 +40,12 @@ const Post = ({name,description,message,photoUrl,comments,timestamp}) => {
                         <p>{new Date(timestamp?.toDate()).toDateString()} <span>{new Date(timestamp?.toDate()).toLocaleTimeString('en-US')}</span></p>
                     </div>
                 </div>
-                <MoreHorizIcon />
+                <button onClick={handleMoreOption}><MoreHorizIcon /></button>
+                {moreOption && (
+                    <div className={`post-moreOption ${moreOption && 'more-optionDisplay'}`}>
+                        <p onClick={()=>handlePostDelete(docId)}>Delete</p>
+                    </div>
+                )}
             </div>
 
             <div className="post-body">
