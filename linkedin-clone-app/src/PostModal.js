@@ -42,8 +42,9 @@ const PostModal = () => {
         async() => {
             const downloadURL = await upload.snapshot.ref.getDownloadURL()
             db.collection('posts').add({
-            name:'Naveen',
-            description:'testing',
+            userName:user.displayName,
+            userImage:user.photoURL,
+            userEmail:user.email,
             message: message,
             photoUrl:downloadURL,
             comments:0,
@@ -53,8 +54,9 @@ const PostModal = () => {
         )
     }else if(videoLink){
             db.collection('posts').add({
-            name:'Naveen',
-            description:'testing',
+            userName:user.displayName,
+            userImage:user.photoURL,
+            userEmail:user.email,
             message: message,
             photoUrl:videoLink,
             comments:0,
@@ -62,8 +64,9 @@ const PostModal = () => {
         })
     }else{
         db.collection('posts').add({
-            name:'Naveen',
-            description:'testing',
+            userName:user.displayName,
+            userImage:user.photoURL,
+            userEmail:user.email,
             message: message,
             comments:0,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
@@ -112,7 +115,7 @@ const PostModal = () => {
                 <div className='modal-container'>
                 <div className='modal-user'>
                     <div className='modal-userInfo'>
-                        <Avatar />
+                        <Avatar src={user.photoURL} />
                         <span>{user.displayName}</span>
                     </div>
                 </div>

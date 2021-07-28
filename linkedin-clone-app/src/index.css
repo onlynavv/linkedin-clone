@@ -21,3 +21,24 @@ body {
   margin-top: 25px;
   max-width: 1128px;
 }
+
+.loader-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loader-content > img {
+  height: 100px;
+  padding: 20px;
+  margin-bottom: 40px;
+}

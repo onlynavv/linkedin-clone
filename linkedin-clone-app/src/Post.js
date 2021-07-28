@@ -7,13 +7,13 @@ import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import {auth} from './firebase'
-import { useAuthState } from 'react-firebase-hooks/auth'
+// import {auth} from './firebase'
+// import { useAuthState } from 'react-firebase-hooks/auth'
 import {db} from './firebase'
 
-const Post = ({name,description,message,photoUrl,comments,timestamp,docId}) => {
+const Post = ({userName,userImage,userEmail,message,photoUrl,comments,timestamp,docId}) => {
 
-    const[user] = useAuthState(auth)
+    // const[user] = useAuthState(auth)
 
     const [moreOption,setMoreOption] = useState(false)
 
@@ -33,10 +33,10 @@ const Post = ({name,description,message,photoUrl,comments,timestamp,docId}) => {
         <div className='post'>
             <div className='post-header'>
                 <div className='post-userInfo'>
-                    <Avatar src={user.photoURL} />
+                    <Avatar src={userImage} />
                     <div className='post-info'>
-                        <h4>{user.displayName}</h4>
-                        <p>{user.email}</p>
+                        <h4>{userName}</h4>
+                        <p>{userEmail}</p>
                         <p>{new Date(timestamp?.toDate()).toDateString()} <span>{new Date(timestamp?.toDate()).toLocaleTimeString('en-US')}</span></p>
                     </div>
                 </div>

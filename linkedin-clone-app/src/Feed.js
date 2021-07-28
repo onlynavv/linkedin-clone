@@ -78,10 +78,10 @@ const Feed = () => {
             </div>
 
             <div className=''>
-                {posts.map(({id,data:{name,description,message,timestamp,photoUrl,comments}})=>{
+                {posts.map(({id,data:{userName,userImage,userEmail,message,timestamp,photoUrl,comments}})=>{
                     // console.log(id)
                     return(
-                        <Post key={id} name={name} description={description} message={message} photoUrl={photoUrl} docId={id} comments={comments} timestamp={timestamp} />
+                        <Post key={id} userName={userName} userEmail={userEmail} userImage={userImage} message={message} photoUrl={photoUrl} docId={id} comments={comments} timestamp={timestamp} />
                     )
                 })}
             </div>
